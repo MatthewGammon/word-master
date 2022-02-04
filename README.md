@@ -1,3 +1,9 @@
+# About
+I forked this project in order to make small changes to the UI and add features requested by my parents.
+Please visit the link below to visit the original project and be sure to click that link to buy Katherine a coffee if you are enjoying the game!
+
+Everything that follows is from the forked repo's README. 
+
 # Word Master
 
 🔗 https://octokatherine.github.io/word-master/
