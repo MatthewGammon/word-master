@@ -17,7 +17,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   box-sizing: border-box;
-  /* background-color: hsl(231, 16%, 92%); */
+  /* background-color: hsl(209deg 75% 50%); */
 }
 
 code {
@@ -28,6 +28,12 @@ body,
 html {
   /* Prevent overscroll on chrome (not supported on safari) */
   overscroll-behavior-y: none;
+}
+
+header,
+.board-main,
+.keyboard-main {
+  background-color: hsl(209deg 75% 50%);
 }
 .h-fill {
   height: 100vh;

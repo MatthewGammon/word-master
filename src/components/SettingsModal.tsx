@@ -36,7 +36,7 @@ export const SettingsModal = ({
     >
       <div className={`h-full ${darkMode ? 'dark' : ''}`}>
         <div
-          className={`h-full flex flex-col items-center justify-center max-w-[390px] mx-auto pt-9 text-primary dark:text-primary-dark `}
+          className={`h-full flex flex-col items-center justify-center max-w-[390px] mx-auto pt-9 text-dark dark:text-primary-dark `}
         >
           <h1 className="text-center mb-4 sm:text-3xl text-2xl">Settings</h1>
           <div className="flex-1 w-full border-b border-slate-400 mb-4">
@@ -100,7 +100,7 @@ export const SettingsModal = ({
                 target="_blank"
                 rel="noreferrer"
               >
-                buying me a coffee
+                buying Katherine a coffee.
               </a>
               <span className="ml-1 text-xs">💛</span>
             </div>
@@ -111,8 +111,8 @@ export const SettingsModal = ({
               className="nm-flat-background dark:nm-flat-background-dark rounded-xl hover:nm-inset-background dark:hover:nm-inset-background-dark"
             >
               <img
-                alt="buy me a coffee"
-                src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=katherinecodes&button_colour=eab308&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=ffffff"
+                alt="buy katherine a coffee"
+                src="https://img.buymeacoffee.com/button-api/?text=Buy Katherine a coffee&emoji=&slug=katherinecodes&button_colour=eab308&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=ffffff"
               />
             </a>
           </div>

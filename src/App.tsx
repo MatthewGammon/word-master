@@ -160,7 +160,7 @@ function App() {
   const isValidWord = (word: string): [boolean] | [boolean, string] => {
     if (word.length < 5) return [false, `please enter a 5 letter word`]
     if (difficultyLevel === difficulty.easy) return [true]
-    debugger
+
     if (!words[word.toLowerCase()]) return [false, `${word} is not a valid word. Please try again.`]
     if (difficultyLevel === difficulty.normal) return [true]
     const guessedLetters = Object.entries(letterStatuses).filter(([letter, letterStatus]) =>
@@ -181,7 +181,7 @@ function App() {
     if (!valid) {
       console.log({ valid, _err })
       setSubmittedInvalidWord(true)
-      // alert(_err)
+      alert(_err)
       return
     }
 
@@ -313,7 +313,7 @@ function App() {
       left: 0,
       right: 0,
       bottom: 0,
-      backgroundColor: darkMode ? 'hsl(231, 16%, 25%)' : 'hsl(231, 16%, 92%)',
+      backgroundColor: darkMode ? 'hsl(231, 16%, 25%)' : 'hsl(209deg 75% 50%)',
       zIndex: 99,
     },
     content: {
@@ -324,11 +324,11 @@ function App() {
       transform: 'translate(-50%, -50%)',
       height: 'calc(100% - 2rem)',
       width: 'calc(100% - 2rem)',
-      backgroundColor: darkMode ? 'hsl(231, 16%, 25%)' : 'hsl(231, 16%, 92%)',
+      backgroundColor: darkMode ? 'hsl(231, 16%, 25%)' : 'hsl(209deg 75% 50%)',
       boxShadow: `${
         darkMode
           ? '0.2em 0.2em calc(0.2em * 2) #252834, calc(0.2em * -1) calc(0.2em * -1) calc(0.2em * 2) #43475C'
-          : '0.2em 0.2em calc(0.2em * 2) #A3A7BD, calc(0.2em * -1) calc(0.2em * -1) calc(0.2em * 2) #FFFFFF'
+          : '0.2em 0.2em calc(0.2em * 2) #D6FF79, calc(0.2em * -1) calc(0.2em * -1) calc(0.2em * 2) #B0FF92'
       }`,
       border: 'none',
       borderRadius: '1rem',
@@ -340,8 +340,11 @@ function App() {
 
   return (
     <div className={darkMode ? 'dark' : ''}>
-      <div className={`flex flex-col justify-between h-fill bg-background dark:bg-background-dark`}>
-        <header className="flex items-center py-2 px-3 text-primary dark:text-primary-dark">
+      <div
+        className={`flex flex-col justify-between h-fill bg-background dark:bg-background-dark`}
+        style={{ background: 'hsl(209deg 75% 50%)' }}
+      >
+        <header className="flex items-center py-2 px-3 text-dark dark:text-primary-dark">
           <button
             type="button"
             onClick={() => setSettingsModalIsOpen(true)}
@@ -360,7 +363,7 @@ function App() {
             <Info />
           </button>
         </header>
-        <div className="flex items-center flex-col py-3 flex-1 justify-center relative">
+        <div className="board-main flex items-center flex-col py-3 flex-1 justify-center relative">
           <div className="relative">
             <div className="grid grid-cols-5 grid-flow-row gap-4">
               {board.map((row: string[], rowNumber: number) =>
@@ -424,7 +427,10 @@ function App() {
           setDifficultyLevel={setDifficultyLevel}
           levelInstructions={getDifficultyLevelInstructions()}
         />
-        <div className={`h-auto relative ${gameState === state.playing ? '' : 'invisible'}`}>
+        <div
+          className={`h-auto relative ${gameState === state.playing ? '' : 'invisible'}`}
+          style={{ background: 'hsl(209deg 75% 50%)' }}
+        >
           <Keyboard
             letterStatuses={letterStatuses}
             addLetter={addLetter}

@@ -63,32 +63,9 @@ const Keyboard = ({
   }, [handleKeyDown])
 
   return (
-    <div className="w-full flex flex-col items-center mb-3 select-none h-auto justify-end">
+    <div className="keyboard-main w-full flex flex-col items-center mb-3 select-none h-auto justify-end">
       {keyboardLetters.map((row, idx) => (
         <div key={idx} className="w-full flex justify-center my-[5px]">
-          {idx === 2 && (
-            <button
-              onClick={onEnterPress}
-              className="h-10 xxs:h-14 w-12 px-1 text-xs font-medium mx-[3.5px] rounded nm-flat-background-sm dark:nm-flat-background-dark-sm text-primary dark:text-primary-dark"
-            >
-              ENTER
-            </button>
-          )}
-          {row.map((letter) => (
-            <button
-              onClick={() => onKeyButtonPress(letter)}
-              key={letter}
-              className="h-10 xxs:h-14 w-[2rem] sm:w-10 mx-[3.5px] text-sm font-medium rounded-[4px] nm-flat-background-sm dark:nm-flat-background-dark-sm"
-            >
-              <div
-                className={`h-full w-full rounded-[3px] flex items-center justify-center ${getKeyStyle(
-                  letter
-                )}`}
-              >
-                {letter}
-              </div>
-            </button>
-          ))}
           {idx === 2 && (
             <button
               onClick={onDeletePress}
@@ -108,6 +85,29 @@ const Keyboard = ({
                   d="M12 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2M3 12l6.414 6.414a2 2 0 001.414.586H19a2 2 0 002-2V7a2 2 0 00-2-2h-8.172a2 2 0 00-1.414.586L3 12z"
                 />
               </svg>
+            </button>
+          )}
+          {row.map((letter) => (
+            <button
+              onClick={() => onKeyButtonPress(letter)}
+              key={letter}
+              className="h-10 xxs:h-14 w-[2rem] sm:w-10 mx-[3.5px] text-sm font-medium rounded-[4px] nm-flat-background-sm dark:nm-flat-background-dark-sm"
+            >
+              <div
+                className={`h-full w-full rounded-[3px] flex items-center justify-center ${getKeyStyle(
+                  letter
+                )}`}
+              >
+                {letter}
+              </div>
+            </button>
+          ))}
+          {idx === 2 && (
+            <button
+              onClick={onEnterPress}
+              className="h-10 xxs:h-14 w-12 px-1 text-xs font-medium mx-[3.5px] rounded nm-flat-background-sm dark:nm-flat-background-dark-sm text-primary dark:text-primary-dark"
+            >
+              Enter
             </button>
           )}
         </div>

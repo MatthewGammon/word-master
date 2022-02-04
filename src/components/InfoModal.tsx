@@ -20,7 +20,7 @@ export const InfoModal = ({ isOpen, handleClose, darkMode, styles }: Props) => (
       >
         <Close />
       </button>
-      <div className="h-full flex flex-col items-center justify-center max-w-[390px] mx-auto pt-9 text-primary dark:text-primary-dark">
+      <div className="h-full flex flex-col items-center justify-center max-w-[390px] mx-auto pt-9 text-dark dark:text-primary-dark">
         <div className="flex-1 w-full sm:text-base text-sm">
           <h1 className="text-center sm:text-3xl text-2xl">How to play</h1>
           <ul className="list-disc pl-5 block sm:text-base text-sm">
