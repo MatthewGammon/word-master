@@ -181,7 +181,7 @@ function App() {
     if (!valid) {
       console.log({ valid, _err })
       setSubmittedInvalidWord(true)
-      alert(_err)
+      // alert(_err)
       return
     }
 
